@@ -25,15 +25,109 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
+# Quiz for Developers 📚
 
-When you're ready, run:
+A React Native quiz application designed to test programming knowledge across various development topics and technologies.
 
-```bash
-npm run reset-project
+## 🚀 Features
+
+- **Interactive Quizzes**: Test your knowledge on different programming topics
+- **Multiple Categories**: JavaScript, React, React Native, CSS, Node.js, and Databases
+- **Clean UI**: Modern interface with purple theming
+- **Cross-Platform**: Works on iOS, Android, and Web
+
+## 📱 Screenshots
+
+The app features:
+- A welcoming home screen with app introduction
+- Quiz categories screen showing different programming topics
+- Purple header with "Quiz for Developers" branding
+
+## 🛠️ Installation & Setup
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+- Expo CLI (for development)
+
+### Getting Started
+
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd QuizForDevelopers
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npx expo start
+   ```
+
+4. **Run on your device**
+   - **iOS Simulator**: Press `i` in the terminal
+   - **Android Emulator**: Press `a` in the terminal
+   - **Web**: Press `w` in the terminal
+   - **Physical Device**: Scan the QR code with Expo Go app
+
+## 📁 Project Structure
+
+```
+QuizForDevelopers/
+├── app/
+│   ├── (tabs)/
+│   │   ├── index.tsx         # Home screen
+│   │   ├── explore.tsx       # Quiz categories screen
+│   │   └── _layout.tsx       # Tab navigation layout
+│   └── _layout.tsx           # Root layout
+├── components/               # Reusable UI components
+├── constants/               # App constants and colors
+├── hooks/                   # Custom React hooks
+└── assets/                  # Images and fonts
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🎨 Theming
+
+The app uses a purple color scheme with:
+- Primary color: `#a855f7` (purple-400)
+- Header background: Purple with white text
+- Accent colors throughout the interface
+
+## 🔧 Development
+
+### Key Technologies
+- **React Native**: Cross-platform mobile development
+- **Expo**: Development platform and tools
+- **TypeScript**: Type-safe JavaScript
+- **Expo Router**: File-based navigation
+
+### Adding New Features
+1. Create new screens in the `app/` directory
+2. Add components to the `components/` directory
+3. Update navigation in `_layout.tsx` files
+4. Style using the existing theme constants
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 👨‍💻 Author
+
+Created with ❤️ for the developer community.
+By Muntasirul Islam
+---
+
+Happy coding! 🎯
 
 ## Learn more
 

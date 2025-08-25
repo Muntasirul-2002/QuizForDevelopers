@@ -1,75 +1,89 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
+    <ScrollView style={styles.container}>
+      <ThemedView style={styles.welcomeContainer}>
+        <ThemedText type="title" style={styles.welcomeTitle}>
+          Hello! 👋
+        </ThemedText>
+        <ThemedText type="subtitle" style={styles.welcomeSubtitle}>
+          Welcome to Quiz for Developers
+        </ThemedText>
+        <ThemedText style={styles.welcomeDescription}>
+          Test your programming knowledge with our interactive quizzes covering various development topics, languages, and frameworks.
         </ThemedText>
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
+      
+      <ThemedView style={styles.featureContainer}>
+        <ThemedText type="subtitle" style={styles.featureTitle}>
+          What you can do:
+        </ThemedText>
+        <ThemedView style={styles.featureItem}>
+          <ThemedText>📚 Take quizzes on different programming topics</ThemedText>
+        </ThemedView>
+        <ThemedView style={styles.featureItem}>
+          <ThemedText>🎯 Track your progress and scores</ThemedText>
+        </ThemedView>
+        <ThemedView style={styles.featureItem}>
+          <ThemedText>🚀 Improve your development skills</ThemedText>
+        </ThemedView>
+      </ThemedView>
+
+      <ThemedView style={styles.getStartedContainer}>
+        <ThemedText type="subtitle">Ready to get started?</ThemedText>
+        <ThemedText style={styles.getStartedText}>
+          Tap the "Explore" tab to browse available quizzes and begin your learning journey!
         </ThemedText>
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
+  container: {
+    flex: 1,
+    padding: 20,
+  },
+  welcomeContainer: {
     alignItems: 'center',
-    gap: 8,
+    marginBottom: 30,
+    paddingTop: 20,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  welcomeTitle: {
+    textAlign: 'center',
+    marginBottom: 10,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  welcomeSubtitle: {
+    textAlign: 'center',
+    marginBottom: 15,
+    color: '#a855f7',
+  },
+  welcomeDescription: {
+    textAlign: 'center',
+    lineHeight: 22,
+    marginHorizontal: 20,
+  },
+  featureContainer: {
+    marginBottom: 30,
+  },
+  featureTitle: {
+    marginBottom: 15,
+  },
+  featureItem: {
+    marginBottom: 10,
+    paddingLeft: 10,
+  },
+  getStartedContainer: {
+    alignItems: 'center',
+    paddingTop: 20,
+  },
+  getStartedText: {
+    textAlign: 'center',
+    marginTop: 10,
+    lineHeight: 22,
   },
 });
