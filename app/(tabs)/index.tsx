@@ -14,7 +14,7 @@ export default function HomeScreen() {
           Welcome to Quiz for Developers
         </ThemedText>
         <ThemedText style={styles.welcomeDescription}>
-          Test your programming knowledge with our interactive quizzes covering various development topics, languages, and frameworks.
+          Developed By Muntasirul Islam
         </ThemedText>
       </ThemedView>
       

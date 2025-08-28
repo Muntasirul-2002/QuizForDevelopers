@@ -1,5 +1,6 @@
 import { ThemedText } from "@/components/ThemedText";
 import { Ionicons } from "@expo/vector-icons";
+import { Href, router } from "expo-router";
 import { ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
 interface Category {
   id: number;
@@ -7,6 +8,7 @@ interface Category {
   title: string;
   description: string;
   questionsCount: number;
+  route : Href;
 }
 const categories: Category[] = [
   {
@@ -16,6 +18,7 @@ const categories: Category[] = [
     description:
       "Test your knowledge of JavaScript fundamentals, ES6+, and modern features.",
     questionsCount: 25,
+    route: "/(theory)/subjects/Javascript",
   },
   {
     id: 2,
@@ -24,21 +27,24 @@ const categories: Category[] = [
     description:
       "Components, hooks, state management, and React best practices.",
     questionsCount: 30,
+    route: "/(theory)/subjects/React"
   },
-  {
-    id: 3,
-    icon: "📱",
-    title: "React Native",
-    description:
-      "Mobile development concepts, navigation, and platform-specific features.",
-    questionsCount: 20,
-  },
+  // {
+  //   id: 3,
+  //   icon: "📱",
+  //   title: "React Native",
+  //   description:
+  //     "Mobile development concepts, navigation, and platform-specific features.",
+  //   questionsCount: 20,
+  //   route: "/(theory)/subjects/react-native"
+  // },
   {
     id: 4,
     icon: "🎨",
     title: "CSS",
     description: "Styling, layouts, animations, and modern CSS techniques.",
     questionsCount: 22,
+    route: "/(theory)/subjects/CSS"
   },
   {
     id: 5,
@@ -47,32 +53,29 @@ const categories: Category[] = [
     description:
       "Server-side JavaScript, APIs, and backend development concepts.",
     questionsCount: 18,
+    route: "/(theory)/subjects/NodeJS"
   },
-  {
-    id: 6,
-    icon: "🗄️",
-    title: "Databases",
-    description: "SQL, NoSQL, database design, and data modeling concepts.",
-    questionsCount: 15,
-  },
+  // {
+  //   id: 6,
+  //   icon: "🗄️",
+  //   title: "Databases",
+  //   description: "SQL, NoSQL, database design, and data modeling concepts.",
+  //   questionsCount: 15,
+  //   route: "/(theory)/subjects/Databases"
+  // },
   {
     id: 7,
     icon: "🐍",
     title: "Python",
     description: "Python syntax, data structures, and programming concepts.",
     questionsCount: 28,
+    route: "/(theory)/subjects/Python"
   },
-  {
-    id: 8,
-    icon: "☁️",
-    title: "Cloud Computing",
-    description: "AWS, Azure, deployment, and cloud architecture concepts.",
-    questionsCount: 12,
-  },
+  
 ];
 export default function TabThreeScreen() {
   const handleCategoryPress = (category: Category) => {
-    console.log("Navigate to category:", category.title);
+    router.push(category.route );
   };
 
   const renderCategoryItem = (category: Category, index: number) => (
