@@ -2,103 +2,83 @@ import { ThemedText } from "@/components/ThemedText";
 import { Ionicons } from "@expo/vector-icons";
 import { Href, router } from "expo-router";
 import { ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
+
 interface Category {
   id: number;
   icon: string;
   title: string;
   description: string;
   questionsCount: number;
-  route : Href;
+  route: Href;
 }
 const categories: Category[] = [
   {
     id: 1,
-    icon: "🚀",
+    icon: "🧩",
     title: "JavaScript",
-    description:
-      "Test your knowledge of JavaScript fundamentals, ES6+, and modern features.",
-    questionsCount: 25,
-    route: "/(theory)/subjects/Javascript",
+    description: "Test your knowledge of Javascript tricky questions",
+    questionsCount: 45,
+    route: "/tricky/topics/JavaScript",
   },
   {
     id: 2,
-    icon: "⚛️",
-    title: "React",
-    description:
-      "Components, hooks, state management, and React best practices.",
-    questionsCount: 30,
-    route: "/(theory)/subjects/React"
-  },
-  {
-    id: 4,
-    icon: "🎨",
-    title: "CSS",
-    description: "Styling, layouts, animations, and modern CSS techniques.",
-    questionsCount: 22,
-    route: "/(theory)/subjects/CSS"
-  },
-  {
-    id: 5,
-    icon: "🔧",
-    title: "Node.js",
-    description:
-      "Server-side JavaScript, APIs, and backend development concepts.",
-    questionsCount: 18,
-    route: "/(theory)/subjects/NodeJS"
-  },
-  {
-    id: 7,
     icon: "🐍",
     title: "Python",
-    description: "Python syntax, data structures, and programming concepts.",
-    questionsCount: 28,
-    route: "/(theory)/subjects/Python"
+    description: "Test your knowledge of Python tricky questions",
+    questionsCount: 45,
+    route: "/tricky/topics/Python",
   },
   
 ];
-export default function TabThreeScreen() {
+export default function TabFourScreen() {
   const handleCategoryPress = (category: Category) => {
-    router.push(category.route );
+    router.push(category.route);
   };
 
-  const renderCategoryItem = (category: Category, index: number) => (
-    <TouchableOpacity
-      key={category.id}
-      style={[
-        styles.categoryCard,
-        index % 2 === 0 ? styles.leftCard : styles.rightCard,
-      ]}
-      onPress={() => handleCategoryPress(category)}
-      activeOpacity={0.7}
-    >
-      <View style={styles.cardHeader}>
-        <View style={styles.iconContainer}>
-          <ThemedText style={styles.categoryIcon}> {category.icon}</ThemedText>
+  const renderCategoryItems = (category: Category, index: number) => {
+    return (
+      <TouchableOpacity
+        key={category.id}
+        style={[
+          styles.categoryCard,
+          index % 2 === 0 ? styles.leftCard : styles.rightCard,
+        ]}
+        onPress={() => handleCategoryPress(category)}
+        activeOpacity={0.7}
+      >
+        <View style={styles.cardHeader}>
+          <View style={styles.iconContainer}>
+            <ThemedText style={styles.categoryIcon}>
+              {" "}
+              {category.icon}
+            </ThemedText>
+          </View>
+          <View style={styles.arrowContainer}>
+            <Ionicons name="chevron-forward" size={20} color="#a855f7" />
+          </View>
         </View>
-        <View style={styles.arrowContainer}>
-          <Ionicons name="chevron-forward" size={20} color="#a855f7" />
-        </View>
-      </View>
-      <ThemedText type="subtitle" style={styles.categoryTitle}>
-        {category.title}
-      </ThemedText>
-      <ThemedText style={styles.categoryDescription}>
-        {category.description}
-      </ThemedText>
-      <View style={styles.questionsContainer}>
-        <ThemedText style={styles.questionsCount}>
-          {category.questionsCount} Questions
+        <ThemedText type="subtitle" style={styles.categoryTitle}>
+          {category.title}
         </ThemedText>
-      </View>
-    </TouchableOpacity>
-  );
+        <ThemedText style={styles.categoryDescription}>
+          {category.description}
+        </ThemedText>
+        <View style={styles.questionsContainer}>
+          <ThemedText style={styles.questionsCount}>
+            {category.questionsCount} Questions
+          </ThemedText>
+        </View>
+      </TouchableOpacity>
+    );
+  };
+
   const renderCategories = () => {
     const rows = [];
     for (let i = 0; i < categories.length; i += 2) {
       rows.push(
         <View key={i} style={styles.categoryRow}>
-          {renderCategoryItem(categories[i], i)}
-          {categories[i + 1] && renderCategoryItem(categories[i + 1], i + 1)}
+          {renderCategoryItems(categories[i], i)}
+          {categories[i + 1] && renderCategoryItems(categories[i + 1], i + 1)}
         </View>
       );
     }
@@ -108,26 +88,15 @@ export default function TabThreeScreen() {
     <ScrollView style={styles.container} showsVerticalScrollIndicator>
       <ThemedText style={styles.titleContainer}>
         <ThemedText type="title" style={styles.title}>
-          Theory Practices
+          Logical Reasoning
         </ThemedText>
-      </ThemedText>
-      <ThemedText style={styles.subtitle}>
-        Choose a category to test your knowledge
       </ThemedText>
       <ThemedText style={styles.categoryContainer}>
         {renderCategories()}
       </ThemedText>
-      <ThemedText style={styles.comingSoonContainer}>
-        <View style={styles.comingSoonCard}>
-          <ThemedText type="subtitle" style={styles.comingSoonTitle}>
-            More Categories Coming Soon!🎯
-          </ThemedText>
-        </View>
-      </ThemedText>
     </ScrollView>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -148,7 +117,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#6b7280",
     fontSize: 16,
-    marginBottom:10
+    marginBottom: 10,
   },
   categoryContainer: {
     paddingHorizontal: 20,
@@ -174,7 +143,7 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 3,
     minHeight: 140,
-    marginBottom:20,
+    marginBottom: 20,
   },
   leftCard: {
     marginRight: 8,

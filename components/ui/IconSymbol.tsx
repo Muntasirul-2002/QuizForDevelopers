@@ -30,6 +30,7 @@ const MAPPING = {
   "xmark.circle.fill": "cancel",
   "list.bullet": "format-list-bulleted",
   "magnifyingglass": "search",
+  "brain.fill": "psychology",
 } as IconMapping;
 
 /**
