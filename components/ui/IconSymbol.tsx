@@ -31,6 +31,8 @@ const MAPPING = {
   "list.bullet": "format-list-bulleted",
   "magnifyingglass": "search",
   "brain.fill": "psychology",
+  'light.strip.2.fill': 'tips-and-updates',
+
 } as IconMapping;
 
 /**

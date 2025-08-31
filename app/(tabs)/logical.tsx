@@ -100,7 +100,6 @@ export default function TabFourScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f8fafc",
   },
   titleContainer: {
     alignItems: "center",
@@ -110,12 +109,12 @@ const styles = StyleSheet.create({
   },
   title: {
     textAlign: "center",
-    color: "#a855f7",
+    color: "#fff",
     marginBottom: 8,
   },
   subtitle: {
     textAlign: "center",
-    color: "#6b7280",
+    color: "#fff",
     fontSize: 16,
     marginBottom: 10,
   },
@@ -131,9 +130,9 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
     borderRadius: 16,
-    backgroundColor: "#ffffff",
+   backgroundColor: "rgba(168, 85, 247, 0.3)",
     borderWidth: 1,
-    borderColor: "rgba(168, 85, 247, 0.1)",
+    borderColor: "rgba(168, 85, 247, 0.4)",
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -173,7 +172,7 @@ const styles = StyleSheet.create({
     padding: 4,
   },
   categoryTitle: {
-    color: "#1f2937",
+    color: "#fff",
     fontSize: 16,
     fontWeight: "bold",
     marginBottom: 6,

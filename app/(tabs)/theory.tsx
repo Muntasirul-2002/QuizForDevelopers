@@ -17,7 +17,7 @@ const categories: Category[] = [
     title: "JavaScript",
     description:
       "Test your knowledge of JavaScript fundamentals, ES6+, and modern features.",
-    questionsCount: 25,
+    questionsCount: 30,
     route: "/(theory)/subjects/Javascript",
   },
   {
@@ -26,7 +26,7 @@ const categories: Category[] = [
     title: "React",
     description:
       "Components, hooks, state management, and React best practices.",
-    questionsCount: 30,
+    questionsCount: 50,
     route: "/(theory)/subjects/React"
   },
   {
@@ -34,7 +34,7 @@ const categories: Category[] = [
     icon: "🎨",
     title: "CSS",
     description: "Styling, layouts, animations, and modern CSS techniques.",
-    questionsCount: 22,
+    questionsCount: 30,
     route: "/(theory)/subjects/CSS"
   },
   {
@@ -43,7 +43,7 @@ const categories: Category[] = [
     title: "Node.js",
     description:
       "Server-side JavaScript, APIs, and backend development concepts.",
-    questionsCount: 18,
+    questionsCount: 15,
     route: "/(theory)/subjects/NodeJS"
   },
   {
@@ -51,7 +51,7 @@ const categories: Category[] = [
     icon: "🐍",
     title: "Python",
     description: "Python syntax, data structures, and programming concepts.",
-    questionsCount: 28,
+    questionsCount: 50 ,
     route: "/(theory)/subjects/Python"
   },
   
@@ -131,24 +131,22 @@ export default function TabThreeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f8fafc",
   },
   titleContainer: {
     alignItems: "center",
-    marginBottom: 30,
+    marginBottom: 10,
     paddingHorizontal: 20,
     paddingTop: 20,
   },
   title: {
     textAlign: "center",
     color: "#a855f7",
-    marginBottom: 8,
   },
   subtitle: {
     textAlign: "center",
-    color: "#6b7280",
+    color: "#cfcbcbff",
     fontSize: 16,
-    marginBottom:10
+    marginBottom: 20,
   },
   categoryContainer: {
     paddingHorizontal: 20,
@@ -162,9 +160,9 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
     borderRadius: 16,
-    backgroundColor: "#ffffff",
+    backgroundColor: "rgba(168, 85, 247, 0.3)",
     borderWidth: 1,
-    borderColor: "rgba(168, 85, 247, 0.1)",
+    borderColor: "rgba(168, 85, 247, 0.4)",
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -204,17 +202,17 @@ const styles = StyleSheet.create({
     padding: 4,
   },
   categoryTitle: {
-    color: "#1f2937",
+    color: "#ffff",
     fontSize: 16,
     fontWeight: "bold",
     marginBottom: 6,
   },
   categoryDescription: {
-    color: "#6b7280",
+    color: "#cfcbcbff",
     fontSize: 12,
     lineHeight: 16,
-    marginBottom: 12,
-    flex: 1,
+    marginBottom: 10,
+    
   },
   questionsContainer: {
     marginTop: "auto",

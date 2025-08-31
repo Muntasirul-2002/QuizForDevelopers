@@ -72,10 +72,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+   
   },
   titleContainer: {
     alignItems: 'center',
     marginBottom: 30,
+    backgroundColor: "#000000"
   },
   title: {
     textAlign: 'center',
@@ -83,23 +85,26 @@ const styles = StyleSheet.create({
   },
   categoryContainer: {
     marginBottom: 30,
+    backgroundColor: "#000000"
   },
   categoryCard: {
     padding: 20,
     marginBottom: 15,
     borderRadius: 12,
-    backgroundColor: 'rgba(168, 85, 247, 0.05)',
+    backgroundColor: 'rgba(168, 85, 247, 0.3)',
     borderLeftWidth: 4,
-    borderLeftColor: '#a855f7',
+    borderLeftColor: 'rgba(168, 85, 247, 0.7)',
   },
   categoryDescription: {
     marginTop: 8,
     lineHeight: 20,
+    color: '#cfcbcbff',
   },
   comingSoonContainer: {
     alignItems: 'center',
     paddingTop: 20,
-    paddingBottom: 40,
+    paddingBottom: 10,
+    marginBottom: 20
   },
   comingSoonTitle: {
     textAlign: 'center',
